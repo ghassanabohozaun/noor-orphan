@@ -122,10 +122,10 @@ class ChildService
                 return false;
             }
 
-            // $childFileData['picture_of_the_orphan_child'] = $this->createChildFile('picture_of_the_orphan_child', $childFileData);
-            // $childFileData['orphan_child_birth_certificate'] = $this->createChildFile('orphan_child_birth_certificate', $childFileData);
-            // $childFileData['father_death_certificate'] = $this->createChildFile('father_death_certificate', $childFileData);
-            // $childFileData['guardian_personal_id_photo'] = $this->createChildFile('guardian_personal_id_photo', $childFileData);
+            $childFileData['picture_of_the_orphan_child'] = $this->createChildFile('picture_of_the_orphan_child', $childFileData);
+            $childFileData['orphan_child_birth_certificate'] = $this->createChildFile('orphan_child_birth_certificate', $childFileData);
+            $childFileData['father_death_certificate'] = $this->createChildFile('father_death_certificate', $childFileData);
+            $childFileData['guardian_personal_id_photo'] = $this->createChildFile('guardian_personal_id_photo', $childFileData);
 
             // child files
             // if (array_key_exists('picture_of_the_orphan_child', $childFileData) && $childFileData['picture_of_the_orphan_child'] != null) {

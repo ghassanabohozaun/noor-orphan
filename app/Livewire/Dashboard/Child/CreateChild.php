@@ -125,12 +125,12 @@ class CreateChild extends Component
 
     public function forthStep()
     {
-        // $this->validate([
-        //     'picture_of_the_orphan_child' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
-        //     'orphan_child_birth_certificate' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
-        //     'father_death_certificate' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
-        //     'guardian_personal_id_photo' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
-        // ]);
+        $this->validate([
+            'picture_of_the_orphan_child' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
+            'orphan_child_birth_certificate' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
+            'father_death_certificate' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
+            'guardian_personal_id_photo' => ['required', 'mimes:png,jpg,jpeg,gif,pdf', 'max:2024'],
+        ]);
 
         $this->currentStep = 5;
     }

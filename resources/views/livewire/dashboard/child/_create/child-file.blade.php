@@ -11,14 +11,14 @@
                 @endif
             </label>
             <input type="file" class="form-control" wire:model="picture_of_the_orphan_child">
-            {{-- <div wire:loading wire:target="picture_of_the_orphan_child">{!! __('children.uploading') !!}</div>
+            <div wire:loading wire:target="picture_of_the_orphan_child">{!! __('children.uploading') !!}</div>
 
             @if ($picture_of_the_orphan_child)
                 <div class="position-relative d-inline-block mt-1 mb-2">
                     <img src="{!! $picture_of_the_orphan_child->temporaryUrl() !!}" alt="{!! __('children.picture_of_the_orphan_child') !!}"
                         class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
                 </div>
-            @endif --}}
+            @endif
             @error('picture_of_the_orphan_child')
                 <span class="text text-danger">
                     <strong>{!! $message !!}</strong>
@@ -37,7 +37,7 @@
                 @endif
             </label>
             <input type="file" class="form-control" wire:model="orphan_child_birth_certificate">
-            {{-- <div wire:loading wire:target="orphan_child_birth_certificate">{!! __('children.uploading') !!}</div>
+            <div wire:loading wire:target="orphan_child_birth_certificate">{!! __('children.uploading') !!}</div>
 
 
             @if ($orphan_child_birth_certificate)
@@ -45,7 +45,7 @@
                     <img src="{!! $orphan_child_birth_certificate->temporaryUrl() !!}" alt="{!! __('children.orphan_child_birth_certificate') !!}"
                         class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
                 </div>
-            @endif --}}
+            @endif
             @error('orphan_child_birth_certificate')
                 <span class="text text-danger">
                     <strong>{!! $message !!}</strong>
@@ -64,7 +64,7 @@
                 @endif
             </label>
             <input type="file" class="form-control" wire:model="father_death_certificate">
-            {{-- <div wire:loading wire:target="father_death_certificate">{!! __('children.uploading') !!}</div>
+            <div wire:loading wire:target="father_death_certificate">{!! __('children.uploading') !!}</div>
 
 
             @if ($father_death_certificate)
@@ -72,7 +72,7 @@
                     <img src="{!! $father_death_certificate->temporaryUrl() !!}" alt="{!! __('children.father_death_certificate') !!}"
                         class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
                 </div>
-            @endif --}}
+            @endif
             @error('father_death_certificate')
                 <span class="text text-danger">
                     <strong>{!! $message !!}</strong>
@@ -91,14 +91,16 @@
                 @endif
             </label>
             <input type="file" class="form-control" wire:model="guardian_personal_id_photo">
-            {{-- <div wire:loading wire:target="guardian_personal_id_photo">{!! __('children.uploading') !!}</div>
+            <div wire:loading wire:target="guardian_personal_id_photo">{!! __('children.uploading') !!}</div>
+
+
 
             @if ($guardian_personal_id_photo)
                 <div class="position-relative d-inline-block mt-1 mb-2">
                     <img src="{!! $guardian_personal_id_photo->temporaryUrl() !!}" alt="{!! __('children.guardian_personal_id_photo') !!}"
                         class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
                 </div>
-            @endif --}}
+            @endif
             @error('guardian_personal_id_photo')
                 <span class="text text-danger">
                     <strong>{!! $message !!}</strong>
@@ -110,6 +112,7 @@
 
 </div>
 <!-- end: picture_of_the_orphan_child ,orphan_child_birth_certificate, father_death_certificate,guardian_personal_id_photo -->
+
 
 
 <!-- begin: button -->

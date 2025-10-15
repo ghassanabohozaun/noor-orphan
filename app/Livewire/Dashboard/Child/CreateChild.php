@@ -112,14 +112,14 @@ class CreateChild extends Component
     // third step
     public function thirdStepSubmit()
     {
-        $this->validate([
-            'guardian_full_name_ar' => ['required', 'string'],
-            'guardian_full_name_en' => ['required', 'string'],
-            'guardian_personal_id' => ['required', 'string'],
-            'guardian_birthday' => ['required', 'date'],
-            'why_not_the_mother_is_guardian' => ['required', 'in:divorced,abandoned,sick,etc'],
-            'guardian_relationship_with_the_child' => ['required', 'in:mother,uncle,aunt,grandfather,grandmother,brother,sister,uncle2,aunt2'],
-        ]);
+        // $this->validate([
+        //     'guardian_full_name_ar' => ['required', 'string'],
+        //     'guardian_full_name_en' => ['required', 'string'],
+        //     'guardian_personal_id' => ['required', 'string'],
+        //     'guardian_birthday' => ['required', 'date'],
+        //     'why_not_the_mother_is_guardian' => ['required', 'in:divorced,abandoned,sick,etc'],
+        //     'guardian_relationship_with_the_child' => ['required', 'in:mother,uncle,aunt,grandfather,grandmother,brother,sister,uncle2,aunt2'],
+        // ]);
         $this->currentStep = 4;
     }
 

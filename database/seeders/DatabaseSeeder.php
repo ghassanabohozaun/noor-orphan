@@ -21,11 +21,14 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-        RoleSeeder::class,
-        AdminSeeder::class,
-        //ChildSeeder::class,
-        GovernorateSeeder::class,
-        CitySeeder::class,
-    ]);
+            RoleSeeder::class,
+            AdminSeeder::class,
+            //ChildSeeder::class,
+            GovernorateSeeder::class,
+            CitySeeder::class,
+            SponsershipStatusSeeder::class,
+            SponsershipOrganizationSeeder::class,
+            SponsershipTypeSeeder::class,
+        ]);
     }
 }

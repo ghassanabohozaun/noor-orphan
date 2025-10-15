@@ -59,11 +59,12 @@
      <link rel="stylesheet" type="text/css" href="{!! asset('assets/dashbaord/css-rtl/pages/timeline.css') !!}">
      <link rel="stylesheet" type="text/css" href="{!! asset('assets/dashbaord/css-rtl/pages/dashboard-ecommerce.css') !!}">
 
-     <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet" />
+     <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+
      <style>
          body,
          html {
-             font-family: "Poppins", "ArbFONTSBEINNormalAR", sans-serif;
+             font-family: "Poppins", "Tajawal", sans-serif;
              font-weight: normal;
              font-style: normal;
          }

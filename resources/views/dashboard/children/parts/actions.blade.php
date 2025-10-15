@@ -10,9 +10,9 @@
             <i class="la la-eye"></i>
         </a>
 
-
         {{-- download pdf --}}
-        <a href="{!! route('dashboard.children.download.pdf', $child->id) !!}" class="btn btn-sm btn-outline-primary" title="{!! __('general.download') !!}">
+        <a href="{!! route('dashboard.children.download.pdf', $child->id) !!}" target="_blank" class="btn btn-sm btn-outline-primary"
+            title="{!! __('general.download') !!}">
             <i class="la la-file-pdf-o"></i>
         </a>
 

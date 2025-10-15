@@ -48,61 +48,15 @@
             <div class="row" style="display: flex ; justify-content: center;">
                 <div class="col-md-12">
                     <div class="content-body">
-
+                        <!-- begin: sections  -->
                         <section id="basic-form-layouts">
                             <div class="row match-height">
                                 <div class="col-md-12">
-                                    <div class="card">
-                                        <!-- begin: card header -->
-                                        <div class="card-header">
-                                            <h4 class="card-title" id="basic-layout-colored-form-control">
-                                                {!! __('children.show_all_children') !!}
-                                            </h4>
-                                            <a class="heading-elements-toggle"><i
-                                                    class="la la-ellipsis-v font-medium-3"></i></a>
-                                            <div class="heading-elements">
-                                                <ul class="list-inline mb-0">
-                                                    <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
-                                                    <li><a data-action="reload"><i class="ft-rotate-cw"></i></a></li>
-                                                    <li><a data-action="expand"><i class="ft-maximize"></i></a></li>
-                                                    <li><a data-action="close"><i class="ft-x"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <!-- end: card header -->
-
-                                        <!-- begin: card content -->
-                                        <div class="card-content collapse show">
-                                            <div class="card-body">
-                                                <div class="table-responsive ">
-                                                    <table id="yajra-datatable" class="table table-striped table-bordered ">
-                                                        <thead>
-
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>{!! __('children.full_name') !!}</th>
-                                                                <th>{!! __('children.personal_id') !!}</th>
-                                                                <th>{!! __('children.birthday') !!}</th>
-                                                                <th>{!! __('children.classification') !!}</th>
-                                                                <th>{!! __('children.gender') !!}</th>
-                                                                <th>{!! __('children.health_status') !!}</th>
-                                                                <th>{!! __('children.authorized_contact_number') !!}</th>
-                                                                <th>{!! __('children.backup_contact_number') !!}</th>
-                                                                <th>{!! __('children.status_manage') !!}</th>
-                                                                <th>{!! __('general.actions') !!}</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- end: card content -->
-                                    </div>
-                                </div> <!-- end: card  -->
-                            </div><!-- end: row  -->
-                        </section><!-- end: sections  -->
+                                    @include('dashboard.children.partials._search')
+                                    @include('dashboard.children.partials._table')
+                                </div><!-- end: row  -->
+                        </section>
+                        <!-- end: sections  -->
                     </div>
                 </div>
             </div>
@@ -115,161 +69,212 @@
 @push('scripts')
     <script type="text/javascript">
         var lang = '{{ Lang() }}';
-        // yajra tables
-        var table = $('#yajra-datatable').DataTable({
-            // dom: 'Bfrtip',
-            processing: true,
-            serverSide: true,
-            colReorder: true,
-            fixedHeader: true,
-            // rowReorder: {
-            //     update: false,
-            //     // selector: 'tr',
-            //     selector: "td:not(:first-child):not(:nth-child(4)):not(:nth-child(13)):not(:nth-child(14))",
-            // },
-            // select: true,
-            // responsive: true,
-            // scrollCollapse: true,
-            // scroller: true,
-            // scrollY: 900,
-            responsive: {
-                details: {
-                    display: DataTable.Responsive.display.modal({
-                        header: function(row) {
-                            var data = row.data();
-                            console.log(data);
-                            return '{!! __('general.detalis_for') !!} : ' + data['full_name'];
+
+        loadData();
+
+        function loadData(personal_id = '', gender = '', classification = '', health_status = '', governoate_id = '',
+            city_id = '') {
+            // yajra tables
+            $('#yajra-datatable').DataTable({
+                // dom: 'Bfrtip',
+                processing: true,
+                serverSide: true,
+                colReorder: true,
+                fixedHeader: true,
+                "bDestroy": true,
+                "bFilter": false,
+
+                // rowReorder: {
+                //     update: false,
+                //     // selector: 'tr',
+                //     selector: "td:not(:first-child):not(:nth-child(4)):not(:nth-child(13)):not(:nth-child(14))",
+                // },
+                // select: true,
+                // responsive: true,
+                // scrollCollapse: true,
+                // scroller: true,
+                // scrollY: 900,
+                responsive: {
+                    details: {
+                        display: DataTable.Responsive.display.modal({
+                            header: function(row) {
+                                var data = row.data();
+                                console.log(data);
+                                return '{!! __('general.detalis_for') !!} : ' + data['full_name'];
+                            }
+                        }),
+                        renderer: DataTable.Responsive.renderer.tableAll({
+                            tableClass: 'table'
+                        })
+                    }
+                },
+
+                // ajax: '{!! route('dashboard.children.get.all') !!}',
+
+                ajax: {
+                    url: '{!! route('dashboard.children.get.all') !!}',
+                    data: {
+                        personal_id: personal_id,
+                        gender: gender,
+                        classification: classification,
+                        health_status: health_status,
+                        governoate_id: governoate_id,
+                        city_id: city_id
+                    },
+                    beforeSend: function() {
+                        // Here, manually add the loading message.
+                        $('#my_mawhobs_data_table > tbody').html(
+                            '<tr class="odd">' +
+                            '<td valign="top" colspan="6" class="dataTables_empty"></td>' +
+                            '</tr>'
+                        );
+                    }
+                },
+
+                columns: [{
+                        data: 'DT_RowIndex',
+                        searchable: false,
+                        orderable: false,
+                    },
+                    {
+                        data: 'full_name',
+                        name: 'full_name',
+                    },
+                    {
+                        data: 'personal_id',
+                        name: 'personal_id',
+                    },
+
+                    {
+                        data: 'birthday',
+                        name: 'birthday',
+                    },
+                    {
+                        data: 'gender',
+                        name: 'gender',
+                    },
+                    {
+                        data: 'classification',
+                        name: 'classification',
+                    },
+                    {
+                        data: 'health_status',
+                        name: 'health_status',
+                    },
+                    {
+                        data: 'governoate_id',
+                        name: 'governoate_id',
+                    },
+                    {
+                        data: 'city_id',
+                        name: 'city_id',
+                    },
+                    {
+                        data: 'authorized_contact_number',
+                        name: 'authorized_contact_number',
+                    },
+                    // {
+                    //     data: 'backup_contact_number',
+                    //     name: 'backup_contact_number',
+                    // },
+
+                    {
+                        data: 'status_manage',
+                        name: 'status_manage',
+                        searchable: false,
+                        orderable: false,
+                    },
+
+                    {
+                        data: 'actions',
+                        searchable: false,
+                        orderable: false,
+                    }
+                ],
+
+                layout: {
+                    // 'colvis',
+                    topStart: {
+                        buttons: ['copy', 'print', 'excel', 'pdf']
+                    }
+                },
+                language: lang === 'ar' ? {
+                    url: '{!! asset('vendor/datatables/ar.json') !!}',
+                } : {},
+
+                buttons: [{
+                        extend: 'colvis',
+                        className: 'btn btn-default',
+                        exportOptions: {
+                            // columns: [0, 1, 2],
+                            columns: ':not(:last-child)',
                         }
-                    }),
-                    renderer: DataTable.Responsive.renderer.tableAll({
-                        tableClass: 'table'
-                    })
-                }
-            },
+                    },
+                    {
+                        extend: 'copy',
+                        className: 'btn btn-default',
+                        exportOptions: {
+                            // columns: [0, 1, 2],
+                            columns: ':not(:last-child)',
+                        }
+                    },
+                    {
+                        extend: 'print',
+                        className: 'btn btn-default',
+                        exportOptions: {
+                            // columns: [0, 1, 2],
+                            columns: ':not(:last-child)',
+                        }
+                    },
+                    {
+                        extend: 'excel',
+                        className: 'btn btn-default',
+                        exportOptions: {
+                            // columns: [0, 1, 2],
+                            columns: ':not(:last-child)',
+                        }
+                    },
+                    {
+                        extend: 'pdf',
+                        className: 'btn btn-default',
+                        exportOptions: {
+                            // columns: [0, 1, 2],
+                            columns: ':not(:last-child)',
+                        }
+                    },
 
-            ajax: '{!! route('dashboard.children.get.all') !!}',
+                ]
 
-            columns: [{
-                    data: 'DT_RowIndex',
-                    searchable: false,
-                    orderable: false,
-                },
-                {
-                    data: 'full_name',
-                    name: 'full_name',
-                },
-                {
-                    data: 'personal_id',
-                    name: 'personal_id',
-                },
+            });
+        }
 
-                {
-                    data: 'birthday',
-                    name: 'birthday',
-                },
-                {
-                    data: 'classification',
-                    name: 'classification',
-                },
-                {
-                    data: 'gender',
-                    name: 'gender',
-                },
-                {
-                    data: 'health_status',
-                    name: 'health_status',
-                },
 
-                {
-                    data: 'authorized_contact_number',
-                    name: 'authorized_contact_number',
-                },
-                {
-                    data: 'backup_contact_number',
-                    name: 'backup_contact_number',
-                },
+        // search
+        $('body').on('click', '#children_search_btn', function(e) {
+            e.preventDefault();
+            var personal_id = $('#personal_id').val();
+            var gender = $('#gender').val();
+            var classification = $('#classification').val();
+            var health_status = $('#health_status').val();
+            var governoate_id = $('#governoate_id').val();
+            var city_id = $('#city_id').val();
 
-                {
-                    data: 'status_manage',
-                    name: 'status_manage',
-                    searchable: false,
-                    orderable: false,
-                },
+            loadData(personal_id, gender, classification, health_status, governoate_id, city_id);
+        })
 
-                {
-                    data: 'actions',
-                    searchable: false,
-                    orderable: false,
-                }
-            ],
 
-            layout: {
-                // 'colvis',
-                topStart: {
-                    buttons: ['copy', 'print', 'excel', 'pdf']
-                }
-            },
-            language: lang === 'ar' ? {
-                url: '{!! asset('vendor/datatables/ar.json') !!}',
-            } : {},
+        // reset
+        $('body').on('click', '#children_reset_btn', function(e) {
+            e.preventDefault();
+            $('#personal_id').val('');
+            $('#gender').val('')
+            $('#classification').val('');
+            $('#health_status').val('');
+            $('#governoate_id').val('');
+            $('#city_id').val('');
 
-            buttons: [{
-                    extend: 'colvis',
-                    className: 'btn btn-default',
-                    exportOptions: {
-                        // columns: [0, 1, 2],
-                        columns: ':not(:last-child)',
-                    }
-                },
-                {
-                    extend: 'copy',
-                    className: 'btn btn-default',
-                    exportOptions: {
-                        // columns: [0, 1, 2],
-                        columns: ':not(:last-child)',
-                    }
-                },
-                {
-                    extend: 'print',
-                    className: 'btn btn-default',
-                    exportOptions: {
-                        // columns: [0, 1, 2],
-                        columns: ':not(:last-child)',
-                    }
-                },
-                {
-                    extend: 'excel',
-                    className: 'btn btn-default',
-                    exportOptions: {
-                        // columns: [0, 1, 2],
-                        columns: ':not(:last-child)',
-                    }
-                },
-                {
-                    extend: 'pdf',
-                    className: 'btn btn-default',
-                    exportOptions: {
-                        // columns: [0, 1, 2],
-                        columns: ':not(:last-child)',
-                    }
-                },
-
-            ]
-
+            loadData();
         });
-
-
-        // // disable button when mouse down
-        // $('table').on('mousedown', 'button', function(e) {
-        //     table.rowReorder.disable();
-        // })
-
-        // // enable button when mouse up
-        // $('table').on('mouseup', 'button', function(e) {
-        //     table.rowReorder.enable();
-        // })
-
-
 
         // delete
         $('body').on('click', '.delete_child_btn', function(e) {

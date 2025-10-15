@@ -24,13 +24,15 @@ class ChildernController extends Controller
     public function index()
     {
         $title = __('children.show_all_children');
-        return view('dashboard.children.index', compact('title'));
+        $governorates = $this->governorateService->getAllGovernoratesWithoutRelations();
+        $cities = $this->cityService->getAllCitiesWithoutRelation();
+        return view('dashboard.children.index', compact('title', 'governorates', 'cities'));
     }
 
     // get All
-    public function getAll()
+    public function getAll(Request $request)
     {
-        return $this->childService->getAll();
+        return $this->childService->getAll($request);
     }
 
     // create
@@ -119,7 +121,7 @@ class ChildernController extends Controller
 
         $pdf = PDF::loadView('dashboard.children.pdf', $data);
 
-        return $pdf->download($child->childFullName() . '.pdf');
+        return $pdf->stream($child->childFullName() . '.pdf');
         //  return $pdf->stream($child->childFullName().'.pdf');
     }
 }

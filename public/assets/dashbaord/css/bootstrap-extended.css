@@ -702,7 +702,7 @@ select.form-control {
 .header-navbar {
   padding: 0px;
   min-height: 5rem;
-  font-family: "Quicksand", Georgia, "Times New Roman", Times, serif;
+  font-family: "Quicksand", Georgia, "Tajawal", Times, serif;
   transition: 300ms ease all;
   /* For sm screen*/ }
   .header-navbar .navbar-wrapper {

@@ -4,7 +4,7 @@
     {!! $title !!}
 @endsection
 @section('content')
-    <div class="main-content position-relative bg-gray-100 max-height-vh-100 h-100">
+    <div class="main-content position-relative bg-gray-100 max-height-vh-90 h-100">
 
         <div class="container">
             <div class="card card-body blur shadow-blur mx-4 mt-7 overflow-hidden">

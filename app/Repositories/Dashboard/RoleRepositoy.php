@@ -27,6 +27,7 @@ class RoleRepositoy
         $roles = Role::orderByDesc('created_at')->select('id', 'role', 'permissions')->paginate(5);
         return $roles;
     }
+
     // store role
     public function storeRole($request)
     {

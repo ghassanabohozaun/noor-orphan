@@ -43,7 +43,7 @@ html body .content .content-wrapper .content-header-title {
   font-size: 14px;
 }
 html body .la {
-  font-size : 1.1rem;
+  font-size : 1.0rem;
 }
 html body[data-col='1-column']:not(.vertical-content-menu) .content, html body[data-col='1-column']:not(.vertical-content-menu) .footer {
   margin-right : 0 !important;
@@ -689,7 +689,7 @@ footer.footer-dark {
 .navigation {
   font-size : 0.85rem;
   letter-spacing : 0.2px;
-  font-family: "Poppins", "ArbFONTSBEINNormalAR", sans-serif;
+  font-family: "Poppins", "Tajawal", sans-serif;
   font-weight : 400;
   overflow-y : hidden;
   padding-bottom : 20px;

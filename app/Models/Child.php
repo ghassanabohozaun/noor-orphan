@@ -123,13 +123,13 @@ class Child extends Authenticatable
     //     return $gender;
     // }
 
-    // //scopes
-    // public function scopeActive($query)
-    // {
-    //     return $query->where('status', 1);
-    // }
-    // public function scopeInactive($query)
-    // {
-    //     return $query->where('status', 0);
-    // }
+    //scopes
+    public function scopeActive($query)
+    {
+        return $query->where('status', 1);
+    }
+    public function scopeInactive($query)
+    {
+        return $query->where('status', 0);
+    }
 }

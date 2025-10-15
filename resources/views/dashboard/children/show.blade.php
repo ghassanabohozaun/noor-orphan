@@ -81,7 +81,8 @@
                                     <div class="card-body">
 
                                         <div class="row mb-3" style="margin: 10px">
-                                            <a href="{!! route('dashboard.children.download.pdf', $child->id) !!}" class="btn btn-warning btn-glow px-2">
+                                            <a href="{!! route('dashboard.children.download.pdf', $child->id) !!}" target="_blank"
+                                                class="btn btn-warning btn-glow px-2">
                                                 <i class="la la-file-pdf-o"></i> {!! __('children.download_sponsorship_form') !!}
                                             </a>
                                         </div>

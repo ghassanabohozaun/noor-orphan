@@ -2,7 +2,16 @@
 @section('title')
     {!! __('dashboard.login') !!}
 @endsection
-
+@push('style')
+    <style type="text/css">
+        .g-recaptcha {
+            transform: scale(0.77);
+            -webkit-transform: scale(0.77);
+            transform-origin: 0 0;
+            -webkit-transform-origin: 0 0;
+        }
+    </style>
+@endpush
 @section('content')
     <div class="app-content content" style="margin-right: 0 !important;">
         <div class="content-wrapper">

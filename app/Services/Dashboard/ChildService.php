@@ -44,14 +44,14 @@ class ChildService
     // get children
     public function getChildren()
     {
-        $children = $this->childRepository->getChildren();
+        $children = $this->childRepository->getChildren(request());
         return $children;
     }
 
     // get all
-    public function getAll()
+    public function getAll($request)
     {
-        $children = $this->childRepository->getChildren();
+        $children = $this->childRepository->getChildren($request);
 
         return DataTables::of($children)
             ->addIndexColumn()
@@ -61,11 +61,17 @@ class ChildService
             ->addColumn('gender', function ($child) {
                 return $child->childGender();
             })
-             ->addColumn('classification', function ($child) {
+            ->addColumn('classification', function ($child) {
                 return $child->childClassification();
             })
             ->addColumn('health_status', function ($child) {
                 return $child->childHealthStatus();
+            })
+            ->addColumn('governoate_id', function ($child) {
+                return $child->governorate->name;
+            })
+            ->addColumn('city_id', function ($child) {
+                return $child->city->name;
             })
             ->addColumn('status_manage', function ($child) {
                 return view('dashboard.children.parts.status_manage', compact('child'));

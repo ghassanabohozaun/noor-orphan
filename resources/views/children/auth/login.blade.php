@@ -5,19 +5,19 @@
 @endsection
 @section('content')
     <section>
-        <div class="page-header min-vh-100">
+        <div class="page-header min-vh-85">
             <div class="container">
 
                 <div class="row">
                     <div class="d-flex align-items-center justify-content-center">
-                        <div class="card  z-index-0 mt-2 col-xl-4 col-lg-5 mt-6">
+                        <div class="card z-index-0  col-xl-4 col-lg-6  col-sm-12 mt-2">
                             <div class="d-flex align-items-center justify-content-center">
-                                <img src="{!! asset('assets/children/assets/img/logo.png') !!}" style="width: 220px">
+                                <img src="{!! asset('assets/children/assets/img/logo.png') !!}" style="width: 180px">
                             </div>
 
                             <div class="card-header pb-0 text-left bg-transparent">
-                                <h3 class="font-weight-bolder text-info text-gradient">{!! __('auth.welcome_back') !!}</h3>
-                                <p class="mb-0">{!! __('auth.enter_child_personal_id_and_passwrod_to_sign_in') !!}</p>
+                                {{-- <h3 class="font-weight-bolder text-info text-gradient">{!! __('auth.welcome_back') !!}</h3> --}}
+                                {{-- <p class="mb-0">{!! __('auth.enter_child_personal_id_and_passwrod_to_sign_in') !!}</p> --}}
                             </div>
                             <div class="card-body">
 
@@ -45,11 +45,6 @@
                                         @enderror
                                     </div>
 
-                                    {{-- <div class="form-check form-switch">
-                                        <label class="form-check-label" for="remmber">{!! __('auth.remmber_me') !!}</label>
-                                        <input class="form-check-input" type="checkbox" id="remmber" name="remmber"
-                                            checked="">
-                                    </div> --}}
 
                                     <div class="text-center">
                                         <button type="submit" class="btn bg-gradient-info w-100 mt-4 mb-0">

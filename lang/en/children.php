@@ -21,6 +21,9 @@ return [
     'files' => 'Files',
     'parents_info' => 'Parents Informations',
     'confirmations' => 'Confirmations',
+    'select_gender' => 'Select Gender',
+    'select_classfication' => 'Select Classfication',
+    'select_health_status' => 'Select Health Status',
 
     'next' => 'Next',
     'previous' => 'Previous',

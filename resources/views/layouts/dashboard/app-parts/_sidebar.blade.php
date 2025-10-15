@@ -130,6 +130,59 @@
 
 
 
+            <!-- begin: world -->
+
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class=" nav-item">
+                    <a href="#">
+                        <i class="icon-settings"></i>
+                        <span class="menu-title" data-i18n="nav.dash.brand">{!! __('sponsership.sponsership_settings') !!}</span>
+                        {{-- <span class="badge badge badge-info badge-pill float-right mr-2">3</span> --}}
+                    </a>
+
+                    <ul class="menu-content">
+
+                        @can('sponsershipStatuses')
+                            <!-- begin: sponsershipStatuses -->
+                            <li class="@if (str_contains(url()->current(), 'sponsershipStatuses')) active @endif">
+                                <a class="menu-item" href="{!! route('dashboard.sponsershipStatuses.index') !!}"
+                                    data-i18n="nav.dash.sponsershipStatuses">
+                                    {!! __('sponsership.sponsership_statuses') !!}
+                                </a>
+                            </li>
+                            <!-- end: sponsershipStatuses -->
+                        @endcan
+
+                        @can('sponsershipOrganizations')
+                            <!-- begin: sponsershipStatuses -->
+                            <li class="@if (str_contains(url()->current(), 'sponsershipOrganizations')) active @endif">
+                                <a class="menu-item" href="{!! route('dashboard.sponsershipOrganizations.index') !!}"
+                                    data-i18n="nav.dash.sponsershipStatuses">
+                                    {!! __('sponsership.sponsershipOrganizations') !!}
+                                </a>
+                            </li>
+                            <!-- end: sponsershipStatuses -->
+                        @endcan
+
+                        @can('sponsershipTypes')
+                            <!-- begin: sponsershipStatuses -->
+                            <li class="@if (str_contains(url()->current(), 'sponsershipTypes')) active @endif">
+                                <a class="menu-item" href="{!! route('dashboard.sponsershipTypes.index') !!}" data-i18n="nav.dash.sponsershipTypes">
+                                    {!! __('sponsership.sponsershipTypes') !!}
+                                </a>
+                            </li>
+                            <!-- end: sponsershipTypes -->
+                        @endcan
+
+                    </ul>
+
+                </li>
+            </ul>
+
+            <!-- end: world -->
+
+
+
             <!-- begin: children -->
             @can('children')
                 <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">

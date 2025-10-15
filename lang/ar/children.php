@@ -14,7 +14,6 @@ return [
     'child_file' => 'بيانات الملفات',
     'child_parents' => 'بيانات والدي الطفل',
     'confirmations' => 'التأكد من صحة البيانات',
-
     'child_info' => 'بيانات الطفل',
     'family_info' => 'بيانات العائلة',
     'father_info' => 'بيانات الأب',
@@ -22,6 +21,10 @@ return [
     'guardian_info' => 'بيانات الوصي',
     'files' => 'الملفات',
     'parents_info' => 'بيانات الوالدين',
+
+    'select_gender' => 'اختار الجنس',
+    'select_classfication' => 'اختار التصنيف',
+    'select_health_status' => 'اختار الحالة الصحية',
 
     'next' => 'التالي',
     'previous' => 'السابق',

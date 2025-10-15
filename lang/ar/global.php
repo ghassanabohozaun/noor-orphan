@@ -6,4 +6,7 @@ return [
     'admins' => 'التحكم في المدراء',
     'world' => 'التحكم في المناطق',
     'children' => 'التحكم في الاطفال الايتام',
+    'sponsershipStatuses' => 'التحكم في حالات الكفالة',
+    'sponsershipOrganizations' => 'التحكم في المؤسسات الكفالة',
+    'sponsershipTypes' => 'التحكم في انواع الكفالات',
 ];

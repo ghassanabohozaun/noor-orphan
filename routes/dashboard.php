@@ -1,13 +1,12 @@
 <?php
 
-use App\Http\Controllers\Dashboard\{AdminsController, ChildernController, CitiesController, DashboardController, GovernoratiesController, ProductsController, RolesController, SettingsController};
+use App\Http\Controllers\Dashboard\{AdminsController, ChildernController, CitiesController, DashboardController, GovernoratiesController, ProductsController, RolesController, SettingsController, SponsershipOrganizationsController, SponsershipStatusesController, SponsershipTypesController};
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Auth\Passowrd\ForgetPasswordController;
 use App\Http\Controllers\Dashboard\Auth\Passowrd\ResetPasswordController;
 use Livewire\Livewire;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
 
 Route::group(
     [
@@ -87,7 +86,29 @@ Route::group(
                 Route::get('download-pdf/{id?}', [ChildernController::class, 'downloadPDF'])->name('children.download.pdf');
             });
 
+            ########################################### addresses routes  ######################################################################
+            Route::get('addresses', [DashboardController::class, 'addresses'])->name('addresses');
 
+            ########################################### sponsership statuses routes  ######################################################################
+            Route::group(['middleware' => 'can:sponsershipStatuses'], function () {
+                Route::resource('sponsershipStatuses', SponsershipStatusesController::class);
+                Route::post('/sponsershipStatuses/destroy', [SponsershipStatusesController::class, 'destroy'])->name('sponsershipStatuses.destroy');
+                Route::post('/sponsershipStatuses/change-status', [SponsershipStatusesController::class, 'changestatus'])->name('sponsershipStatuses.change.status');
+            });
+
+            ########################################### sponsership organizations routes  ######################################################################
+            Route::group(['middleware' => 'can:sponsershipOrganizations'], function () {
+                Route::resource('sponsershipOrganizations', SponsershipOrganizationsController::class);
+                Route::post('/sponsershipOrganizations/destroy', [sponsershipOrganizationsController::class, 'destroy'])->name('sponsershipOrganizations.destroy');
+                Route::post('/sponsershipOrganizations/change-status', [sponsershipOrganizationsController::class, 'changestatus'])->name('sponsershipOrganizations.change.status');
+            });
+
+            ########################################### sponsership types routes  ######################################################################
+            Route::group(['middleware' => 'can:sponsershipTypes'], function () {
+                Route::resource('sponsershipTypes', SponsershipTypesController::class);
+                Route::post('/sponsershipTypes/destroy', [SponsershipTypesController::class, 'destroy'])->name('sponsershipTypes.destroy');
+                Route::post('/sponsershipTypes/change-status', [SponsershipTypesController::class, 'changestatus'])->name('sponsershipTypes.change.status');
+            });
         });
     },
 );

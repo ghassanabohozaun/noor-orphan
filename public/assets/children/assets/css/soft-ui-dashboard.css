@@ -8247,6 +8247,10 @@ fieldset:disabled .btn {
   min-height: 85vh !important;
 }
 
+.min-vh-90 {
+  min-height: 90vh !important;
+}
+
 .min-vh-100 {
   min-height: 100vh !important;
 }
@@ -19349,7 +19353,7 @@ fieldset:disabled .btn {
 
 .card .card-body {
   font-family: "Open Sans";
-  padding: 1.5rem;
+  padding: 1.0rem;
 }
 
 .card.card-plain {

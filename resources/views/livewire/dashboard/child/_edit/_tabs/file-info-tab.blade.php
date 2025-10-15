@@ -16,7 +16,7 @@
                              class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
 
                          <a href="{!! asset('uploads/children/' . $picture_of_the_orphan_child) !!}" target="_blank"
-                             class="badge badge-md bg-info position-absolute" style="top: 2px; left: 2px;">
+                             class="badge badge-sm bg-info position-absolute" style="top: 2px; left: 2px;">
                              {!! __('general.download') !!}
                          </a>
                      </div>
@@ -51,7 +51,7 @@
                              class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
 
                          <a href="{!! asset('uploads/children/' . $orphan_child_birth_certificate) !!}" target="_blank"
-                             class="badge badge-md bg-info position-absolute" style="top: 2px; left: 2px;">
+                             class="badge badge-sm bg-info position-absolute" style="top: 2px; left: 2px;">
                              {!! __('general.download') !!}
                          </a>
                      </div>
@@ -79,7 +79,7 @@
                          <img src="{!! asset('uploads/children/' . $father_death_certificate) !!}" alt="{!! __('children.father_death_certificate') !!}"
                              class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
                          <a href="{!! asset('uploads/children/' . $father_death_certificate) !!}" target="_blank"
-                             class="badge badge-md bg-info position-absolute" style="top: 2px; left: 2px;">
+                             class="badge badge-sm bg-info position-absolute" style="top: 2px; left: 2px;">
                              {!! __('general.download') !!}
                          </a>
                      </div>
@@ -107,7 +107,7 @@
                          <img src="{!! asset('uploads/children/' . $guardian_personal_id_photo) !!}" alt="profile_image"
                              class="w-100 shadow-sm img-fluid img-thumbnail round-md" />
                          <a href="{!! asset('uploads/children/' . $father_death_certificate) !!}" target="_blank"
-                             class="badge badge-md bg-info position-absolute" style="top: 2px; left: 2px;">
+                             class="badge badge-sm bg-info position-absolute" style="top: 2px; left: 2px;">
                              {!! __('general.download') !!}
                          </a>
                      </div>

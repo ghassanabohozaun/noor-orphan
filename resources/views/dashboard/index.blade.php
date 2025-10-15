@@ -125,8 +125,6 @@
                                     <div class="card-body">
 
 
-
-
                                         <!--begin::Body-->
                                         <div class="container-fluid">
                                             <div class="row">
@@ -146,26 +144,47 @@
                                                             </tr>
                                                         </thead>
                                                         <tbody>
-                                                            @foreach ($children as $key => $child)
+                                                            @forelse ($children as $key => $child)
                                                                 <tr>
-                                                                    <td>{!! $loop->iteration !!}</td>
-                                                                    <td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $loop->iteration !!}
+                                                                    </td>
+                                                                    <td class="text-center" style="vertical-align:middle">
                                                                         @if ($child->childFile->picture_of_the_orphan_child)
                                                                             <img src="{{ asset('uploads/children/' . $child->childFile->picture_of_the_orphan_child) }}"
-                                                                                class="img-fluid img-thumbnail table-image " />
+                                                                                class="img-fluid img-thumbnail table-image" />
                                                                         @else
                                                                             <img src="{{ asset('adminBoard/images/images-empty.png/') }}"
                                                                                 class="img-fluid img-thumbnail table-image " />
                                                                         @endif
                                                                     </td>
-                                                                    <td>{!! $child->childFullName() !!} </td>
-                                                                    <td>{!! $child->personal_id !!}</td>
-                                                                    <td>{!! $child->birthday !!}</td>
-                                                                    <td>{!! $child->childGender() !!}</td>
-                                                                    <td>{!! $child->class !!}</td>
-                                                                    <td>{!! $child->authorized_contact_number !!}</td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $child->childFullName() !!}
+                                                                    </td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $child->personal_id !!}
+                                                                    </td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $child->birthday !!}
+                                                                    </td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $child->childGender() !!}
+                                                                    </td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $child->class !!}
+                                                                    </td>
+                                                                    <td class="text-center" style="vertical-align:middle">
+                                                                        {!! $child->authorized_contact_number !!}
+                                                                    </td>
                                                                 </tr>
-                                                            @endforeach
+
+                                                            @empty
+                                                                <tr>
+                                                                    <td colspan="8" class="text-center">
+                                                                        {!! __('children.no_childern_found') !!}</td>
+                                                                </tr>
+                                                            @endforelse
+
                                                         </tbody>
                                                     </table>
                                                 </div>

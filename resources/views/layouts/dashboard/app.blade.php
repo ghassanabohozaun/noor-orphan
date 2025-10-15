@@ -9,7 +9,7 @@
 </head>
 
 <body class="vertical-layout vertical-menu-modern 2-columns  menu-expanded fixed-navbar" data-open="click"
-    data-menu="vertical-menu-modern" data-col="2-columns">
+    data-menu="vertical-menu-modern" data-col="2-columns" style="font-family: 'Tajawal', sans-serif;">
 
 
     @include('layouts.dashboard.app-parts._header')

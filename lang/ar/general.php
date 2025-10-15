@@ -46,6 +46,7 @@ return [
     'english_langauge_enabled_all_the_times' => 'اللغة الانجليزية فعالة دائماً',
     'send' => 'إرسال',
     'write_here' => 'اكتب هنا ....',
+    'filters' => 'الفلترة حسب المعايير',
 
     'not_found' => 'غير متاحة',
     'example' => 'مثال',

@@ -29,15 +29,39 @@ class ChildRepository
     }
 
     // get child with relation
-    public function getChildWithRelations2($id)
-    {
-        return Child::with(['childFile'])->find($id);
-    }
+    // public function getChildWithRelations2()
+    // {
+    //     return Child::with(['childFile', 'childFamily', 'childFather', 'childMother', 'childGuardian', 'childFile', 'governorate', 'city'])
+    //         ->latest()
+    //         ->limit(10)
+    //         ->get();
+    // }
 
     // get children
-    public function getChildren()
+    public function getChildren($request)
     {
-        return Child::with(['childFile', 'childFamily', 'childFather', 'childMother', 'childGuardian', 'childFile', 'governorate', 'city'])->latest()->limit(10)->get();
+        return Child::with(['childFile', 'childFamily', 'childFather', 'childMother', 'childGuardian', 'childFile', 'governorate', 'city'])
+            ->when(!empty(request()->personal_id), function ($query) {
+                $query->where('personal_id', request()->personal_id);
+            })
+            ->when(!empty(request()->gender), function ($query) {
+                $query->where('gender', request()->gender);
+            })
+            ->when(!empty(request()->classification), function ($query) {
+                $query->where('classification', request()->classification);
+            })
+            ->when(!empty(request()->health_status), function ($query) {
+                $query->where('health_status', request()->health_status);
+            })
+            ->when(!empty(request()->governoate_id), function ($query) {
+                $query->where('governoate_id', request()->governoate_id);
+            })
+            ->when(!empty(request()->city_id), function ($query) {
+                $query->where('city_id', request()->city_id);
+            })
+            ->latest()
+            ->limit(10)
+            ->get();
     }
 
     // create child

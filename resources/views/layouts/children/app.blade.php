@@ -24,7 +24,7 @@
     @stack('style')
 </head>
 
-<body class="g-sidenav-show {!! Lang() == 'ar' ? 'rtl' : 'ltr' !!}  bg-gray-100">
+<body class="g-sidenav-show  {!! Lang() == 'ar' ? 'rtl' : 'ltr' !!}  bg-gray-100">
     <div class="container position-sticky z-index-sticky top-0">
         <div class="row">
             <div class="col-12">
@@ -128,7 +128,7 @@
         </div>
     </div>
     <!-- main -->
-    <main class="main-content  mt-0">
+    <main class="main-content mt-0">
         @yield('content')
     </main>
     <!-- End main -->

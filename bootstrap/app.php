@@ -34,7 +34,7 @@ return Application::configure(basePath: dirname(__DIR__))
             } elseif (request()->is('*/child/*')) {
                 return route('child.get.login');
             } else {
-                return route('home');
+                return route('child.welcome');
             }
         });
 
@@ -45,7 +45,7 @@ return Application::configure(basePath: dirname(__DIR__))
             } elseif (Auth::guard('child')->check()) {
                 return route('child.children.show', child()->user()->id);
             } else {
-                return route('home');
+                return route('child.welcome');
             }
         });
 

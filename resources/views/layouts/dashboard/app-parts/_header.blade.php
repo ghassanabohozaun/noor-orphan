@@ -8,10 +8,10 @@
                              class="ft-menu font-large-1"></i></a></li>
                  <li class="nav-item mr-auto site_name_logo_section">
                      <a class="navbar-brand" href="#">
-                         @if ($settings->logo != null)
-                             <img class="brand-logo" alt="" src="{!! asset('uploads/settings/' . $settings->logo) !!}">
+                         @if (setting()->logo != null)
+                             <img class="brand-logo" alt="" src="{!! asset('uploads/settings/' . setting()->logo) !!}">
                          @endif
-                         <h4 class="brand-text">{!! $settings->site_name !!}</h4>
+                         <h4 class="brand-text">{!! setting()->site_name !!}</h4>
                      </a>
                  </li>
                  <li class="nav-item d-none d-md-block float-right"><a class="nav-link modern-nav-toggle pr-0"

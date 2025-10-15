@@ -75,7 +75,7 @@
                                             <div class="form-body">
 
                                                 <input type="hidden" id='id' name="id"
-                                                    value="{!! $settings->id !!}">
+                                                    value="{!! setting()->id !!}">
 
                                                 <!-- begin: row site name-->
                                                 <div class="row">
@@ -84,7 +84,7 @@
                                                         <div class="form-group">
                                                             <label for="site_name">{!! __('settings.site_name_ar') !!}</label>
                                                             <input type="text" id="site_name_ar" name="site_name[ar]"
-                                                                value="{!! old('site_name.ar', $settings->getTranslation('site_name', 'ar')) !!}" class="form-control"
+                                                                value="{!! old('site_name.ar', setting()->getTranslation('site_name', 'ar')) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_site_name_ar') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="site_name_ar_error"></strong>
@@ -99,7 +99,7 @@
                                                         <div class="form-group">
                                                             <label for="site_name">{!! __('settings.site_name_en') !!}</label>
                                                             <input type="text" id="site_name_en" name="site_name[en]"
-                                                                value="{!! old('site_name.en', $settings->getTranslation('site_name', 'en')) !!}" class="form-control"
+                                                                value="{!! old('site_name.en', setting()->getTranslation('site_name', 'en')) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_site_name_en') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="site_name_en_error"></strong>
@@ -118,7 +118,7 @@
                                                         <div class="form-group">
                                                             <label for="address_ar">{!! __('settings.address_ar') !!}</label>
                                                             <input type="text" id="address_ar" name="address[ar]"
-                                                                value="{!! old('address.ar', $settings->getTranslation('address', 'ar')) !!}" class="form-control"
+                                                                value="{!! old('address.ar', setting()->getTranslation('address', 'ar')) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_address_ar') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="address_ar_error"></strong>
@@ -132,7 +132,7 @@
                                                         <div class="form-group">
                                                             <label for="address_en">{!! __('settings.address_en') !!}</label>
                                                             <input type="text" id="address_en" name="address[en]"
-                                                                value="{!! old('address.en', $settings->getTranslation('address', 'en')) !!}" class="form-control"
+                                                                value="{!! old('address.en', setting()->getTranslation('address', 'en')) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_address_en') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="address_en_error"></strong>
@@ -150,7 +150,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="description_ar">{!! __('settings.description_ar') !!}</label>
-                                                            <textarea rows="5" id="description_ar" name="description[ar]" class="form-control" autocomplete="off">{!! old('description.ar', $settings->getTranslation('description', 'ar')) !!}</textarea>
+                                                            <textarea rows="5" id="description_ar" name="description[ar]" class="form-control" autocomplete="off">{!! old('description.ar', setting()->getTranslation('description', 'ar')) !!}</textarea>
                                                             <span class="text text-danger">
                                                                 <strong id="description_ar_error"></strong>
                                                             </span>
@@ -162,7 +162,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="description_en">{!! __('settings.description_en') !!}</label>
-                                                            <textarea rows="5" id="description_en" name="description[en]" class="form-control" autocomplete="off">{!! old('description.en', $settings->getTranslation('description', 'en')) !!}</textarea>
+                                                            <textarea rows="5" id="description_en" name="description[en]" class="form-control" autocomplete="off">{!! old('description.en', setting()->getTranslation('description', 'en')) !!}</textarea>
                                                             <span class="text text-danger">
                                                                 <strong id="description_en_error"></strong>
                                                             </span>
@@ -179,7 +179,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="keywords_ar">{!! __('settings.keywords_ar') !!}</label>
-                                                            <textarea rows="5" id="keywords_ar" name="keywords[ar]" class="form-control" autocomplete="off">{!! old('keywords.ar', $settings->getTranslation('keywords', 'ar')) !!}</textarea>
+                                                            <textarea rows="5" id="keywords_ar" name="keywords[ar]" class="form-control" autocomplete="off">{!! old('keywords.ar', setting()->getTranslation('keywords', 'ar')) !!}</textarea>
                                                             <span class="text text-danger">
                                                                 <strong id="keywords_ar_error"></strong>
                                                             </span>
@@ -191,7 +191,7 @@
                                                     <div class="col-md-6">
                                                         <div class="form-group">
                                                             <label for="keywords_en">{!! __('settings.keywords_en') !!}</label>
-                                                            <textarea rows="5" id="keywords_en" name="keywords[en]" class="form-control" autocomplete="off">{!! old('keywords.en', $settings->getTranslation('keywords', 'en')) !!}</textarea>
+                                                            <textarea rows="5" id="keywords_en" name="keywords[en]" class="form-control" autocomplete="off">{!! old('keywords.en', setting()->getTranslation('keywords', 'en')) !!}</textarea>
                                                             <span class="text text-danger">
                                                                 <strong id="keywords_en_error"></strong>
                                                             </span>
@@ -235,7 +235,7 @@
                                                         <div class="form-group">
                                                             <label for="phone">{!! __('settings.phone') !!}</label>
                                                             <input type="text" id="phone" name="phone"
-                                                                value="{!! old('phone', $settings->phone) !!}" class="form-control"
+                                                                value="{!! old('phone', setting()->phone) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_phone') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="phone_error"></strong>
@@ -253,7 +253,7 @@
                                                         <div class="form-group">
                                                             <label for="mobile">{!! __('settings.mobile') !!}</label>
                                                             <input type="text" id="mobile" name="mobile"
-                                                                value="{!! old('mobile', $settings->mobile) !!}" class="form-control"
+                                                                value="{!! old('mobile', setting()->mobile) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_mobile') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="mobile_error"></strong>
@@ -272,7 +272,7 @@
                                                         <div class="form-group">
                                                             <label for="whatsapp">{!! __('settings.whatsapp') !!}</label>
                                                             <input type="text" id="whatsapp" name="whatsapp"
-                                                                value="{!! old('whatsapp', $settings->whatsapp) !!}" class="form-control"
+                                                                value="{!! old('whatsapp', setting()->whatsapp) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_whatsapp') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="whatsapp_error"></strong>
@@ -290,7 +290,7 @@
                                                         <div class="form-group">
                                                             <label for="email">{!! __('settings.email') !!}</label>
                                                             <input type="text" id="email" name="email"
-                                                                value="{!! old('email', $settings->email) !!}" class="form-control"
+                                                                value="{!! old('email', setting()->email) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_email') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="email_error"></strong>
@@ -308,7 +308,7 @@
                                                         <div class="form-group">
                                                             <label for="email_support">{!! __('settings.email_support') !!}</label>
                                                             <input type="text" id="email_support" name="email_support"
-                                                                value="{!! old('email_support', $settings->email_support) !!}" class="form-control"
+                                                                value="{!! old('email_support', setting()->email_support) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_email_support') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="email_support_error"></strong>
@@ -354,7 +354,7 @@
                                                         <div class="form-group">
                                                             <label for="facebook">{!! __('settings.facebook') !!}</label>
                                                             <input type="text" id="facebook" name="facebook"
-                                                                value="{!! old('facebook', $settings->facebook) !!}" class="form-control"
+                                                                value="{!! old('facebook', setting()->facebook) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_facebook') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="facebook_error"></strong>
@@ -368,7 +368,7 @@
                                                         <div class="form-group">
                                                             <label for="twitter">{!! __('settings.twitter') !!}</label>
                                                             <input type="text" id="twitter" name="twitter"
-                                                                value="{!! old('twitter', $settings->twitter) !!}" class="form-control"
+                                                                value="{!! old('twitter', setting()->twitter) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_twitter') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="twitter_error"></strong>
@@ -387,7 +387,7 @@
                                                         <div class="form-group">
                                                             <label for="instegram">{!! __('settings.instegram') !!}</label>
                                                             <input type="text" id="instegram" name="instegram"
-                                                                value="{!! old('instegram', $settings->instegram) !!}" class="form-control"
+                                                                value="{!! old('instegram', setting()->instegram) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_instegram') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="instegram_error"></strong>
@@ -401,7 +401,7 @@
                                                         <div class="form-group">
                                                             <label for="youtube">{!! __('settings.youtube') !!}</label>
                                                             <input type="text" id="youtube" name="youtube"
-                                                                value="{!! old('youtube', $settings->youtube) !!}" class="form-control"
+                                                                value="{!! old('youtube', setting()->youtube) !!}" class="form-control"
                                                                 autocomplete="off" placeholder="{!! __('settings.enter_youtube') !!}">
                                                             <span class="text text-danger">
                                                                 <strong id="youtube_error"></strong>
@@ -545,7 +545,7 @@
         $('#settings_form').on('submit', function(e) {
             e.preventDefault();
             resetUpdateSettings();
-            var settings_id = "{{ $settings->id }}"
+            var settings_id = "{{ setting()->id }}"
             var data = new FormData(this);
             var url = "{!! route('dashboard.settings.update', 'id') !!}".replace('id', settings_id);
             var type = $(this).attr('method');
@@ -603,8 +603,8 @@
 
         // file input
         var lang = "{!! Lang() !!}";
-        var logo = "{!! $settings->logo !!}";
-        var favicon = "{!! $settings->favicon !!}";
+        var logo = "{!! setting()->logo !!}";
+        var favicon = "{!! setting()->favicon !!}";
 
         //logo
         $("#settings_logo").fileinput({
@@ -619,7 +619,7 @@
             showUpload: false,
             initialPreviewAsData: true,
             initialPreview: logo === '' ? [] : [
-                "{!! asset('/uploads/settings/' . $settings->logo) !!}",
+                "{!! asset('/uploads/settings/' . setting()->logo) !!}",
             ],
         });
 
@@ -636,7 +636,7 @@
             showUpload: false,
             initialPreviewAsData: true,
             initialPreview: favicon === '' ? [] : [
-                "{!! asset('/uploads/settings/' . $settings->favicon) !!}",
+                "{!! asset('/uploads/settings/' . setting()->favicon) !!}",
             ],
         });
     </script>

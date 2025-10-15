@@ -10,7 +10,7 @@
                     <i class="la la-check" style="color: #3d9464 ;font-weight:bolder"></i>
                 @endif
             </label>
-            <input type="file" class="form-control" wire:model.live="picture_of_the_orphan_child">
+            <input type="file" class="form-control" wire:model="picture_of_the_orphan_child">
             {{-- <div wire:loading wire:target="picture_of_the_orphan_child">{!! __('children.uploading') !!}</div>
 
             @if ($picture_of_the_orphan_child)
@@ -36,7 +36,7 @@
                     <i class="la la-check" style="color: #3d9464 ;font-weight:bolder"></i>
                 @endif
             </label>
-            <input type="file" class="form-control" wire:model.live="orphan_child_birth_certificate">
+            <input type="file" class="form-control" wire:model="orphan_child_birth_certificate">
             {{-- <div wire:loading wire:target="orphan_child_birth_certificate">{!! __('children.uploading') !!}</div>
 
 
@@ -63,7 +63,7 @@
                     <i class="la la-check" style="color: #3d9464 ;font-weight:bolder"></i>
                 @endif
             </label>
-            <input type="file" class="form-control" wire:model.live="father_death_certificate">
+            <input type="file" class="form-control" wire:model="father_death_certificate">
             {{-- <div wire:loading wire:target="father_death_certificate">{!! __('children.uploading') !!}</div>
 
 
@@ -90,7 +90,7 @@
                     <i class="la la-check" style="color: #3d9464 ;font-weight:bolder"></i>
                 @endif
             </label>
-            <input type="file" class="form-control" wire:model.live="guardian_personal_id_photo">
+            <input type="file" class="form-control" wire:model="guardian_personal_id_photo">
             {{-- <div wire:loading wire:target="guardian_personal_id_photo">{!! __('children.uploading') !!}</div>
 
             @if ($guardian_personal_id_photo)

@@ -12,6 +12,7 @@ if (!function_exists('setting')) {
     }
 }
 
+// test
 //  get language Helper Function
 if (!function_exists('Lang')) {
     function Lang()

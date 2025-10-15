@@ -112,7 +112,6 @@
 <!-- end: picture_of_the_orphan_child ,orphan_child_birth_certificate, father_death_certificate,guardian_personal_id_photo -->
 
 
-
 <!-- begin: button -->
 <div class="row {!! Lang() == 'ar' ? 'pull-left' : 'pull-right' !!}">
     <div class="col-md-12">

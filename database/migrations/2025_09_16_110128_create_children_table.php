@@ -26,9 +26,12 @@ return new class extends Migration {
             $table->longText('disease_clarification')->nullable();
             $table->string('authorized_contact_number')->nullable();
             $table->string('backup_contact_number')->nullable();
-            $table->string('whatsApp_number')->nullable();
+            $table->string('whatsapp_number')->nullable();
             $table->foreignId('governoate_id')->nullable()->constrained('governorates')->cascadeOnDelete();
             $table->foreignId('city_id')->nullable()->constrained('cities')->cascadeOnDelete();
+            $table->foreignId('sponsership_status_id')->nullable()->constrained('sponsership_statuses')->cascadeOnDelete();
+            $table->foreignId('sponsership_organization_id')->nullable()->constrained('sponsership_organizations')->cascadeOnDelete();
+            $table->foreignId('sponsership_type_id')->nullable()->constrained('sponsership_types')->cascadeOnDelete();
             $table->longText('address_details')->nullable();
             $table->boolean('status')->default(1);
             $table->boolean('freeze')->default(0);

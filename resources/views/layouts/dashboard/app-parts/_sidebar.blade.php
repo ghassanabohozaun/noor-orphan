@@ -74,7 +74,7 @@
                         <a href="#">
                             <i class="icon-user"></i>
                             <span class="menu-title" data-i18n="nav.dash.admins">{!! __('dashboard.admins') !!}</span>
-                            <span class="badge badge badge-info badge-pill float-right mr-2">{!! $admins_count !!}</span>
+                            {{-- <span class="badge badge badge-info badge-pill float-right mr-2">{!! $admins_count !!}</span> --}}
                         </a>
                         <!-- begin: admins -->
                         <ul class="menu-content">
@@ -90,8 +90,6 @@
                 </ul>
             @endcan
             <!-- end: admins -->
-
-
 
 
             <!-- begin: world -->
@@ -190,8 +188,8 @@
                         <a href="#">
                             <i class="icon-user-following"></i>
                             <span class="menu-title" data-i18n="nav.dash.children">{!! __('dashboard.children') !!}</span>
-                            <span class="badge badge badge-info badge-pill float-right mr-2">{!! $children_count !!}
-                            </span>
+                            {{-- <span class="badge badge badge-info badge-pill float-right mr-2">{!! $children_count !!}
+                            </span> --}}
                         </a>
                         <!-- begin: children -->
                         <ul class="menu-content">

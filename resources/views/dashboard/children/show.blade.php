@@ -39,12 +39,17 @@
                 <!-- begin: content header right-->
                 <div class="content-header-right col-md-6 col-12">
                     <div class="float-md-right mb-1">
-                        <a href="{!! route('dashboard.children.edit', $child->id) !!}" class="btn btn-primary round btn-glow px-2">
+                        <a href="{!! route('dashboard.children.edit', $child->id) !!}" class="btn btn-primary btn-glow px-2">
                             {!! __('children.update_child') !!}
                         </a>
-                        <a href="{!! route('dashboard.children.create') !!}" class="btn btn-info  btn-glow px-2">
+                        <a href="{!! route('dashboard.children.create') !!}" class="btn btn-info btn-glow px-2">
                             {!! __('children.create_new_child') !!}
                         </a>
+
+                        <a href="{!! route('dashboard.children.download.pdf', $child->id) !!}" target="_blank" class="btn btn-warning btn-glow px-2">
+                            <i class="la la-file-pdf-o"></i> {!! __('children.download_sponsorship_form') !!}
+                        </a>
+
                     </div>
                 </div>
                 <!-- end: content header right-->
@@ -79,20 +84,7 @@
                                 <!-- begin: card content -->
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-
-                                        <div class="row mb-3" style="margin: 10px">
-                                            <a href="{!! route('dashboard.children.download.pdf', $child->id) !!}" target="_blank"
-                                                class="btn btn-warning btn-glow px-2">
-                                                <i class="la la-file-pdf-o"></i> {!! __('children.download_sponsorship_form') !!}
-                                            </a>
-                                        </div>
-                                        <!-- begin: basic info div -->
-                                        <div class="row">
-                                            <div class="col-lg-12">
-                                                @livewire('dashboard.child.show-child', compact('ChildID', 'child'))
-                                            </div>
-                                        </div>
-                                        <!-- end: basic info div -->
+                                        @include('dashboard.children.show.form')
                                     </div>
                                     <!-- end: card content -->
                                 </div>

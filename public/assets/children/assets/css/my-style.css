@@ -11,3 +11,9 @@ font-size: 0.775rem;
 font-size: 0.875rem;
 letter-spacing: 0.07rem;
 }
+
+label.error {
+    color: #FF4961;
+    padding-top: 5px;
+    font-size: 0.68rem;
+}

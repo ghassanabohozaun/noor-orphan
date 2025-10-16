@@ -69,9 +69,9 @@ class ChildrenController extends Controller
         }
 
         $title = __('children.update_child');
-        $governoates = $this->governorateService->getAllGovernoratesWithoutRelations();
+        $governorates = $this->governorateService->getAllGovernoratesWithoutRelations();
         $cities = $this->cityService->getAllCitiesWithoutRelation();
-        return view('children.edit', compact('title', 'ChildID', 'child', 'governoates', 'cities'));
+        return view('children.edit', compact('title', 'ChildID', 'child', 'governorates', 'cities'));
     }
 
     // update

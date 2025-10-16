@@ -65,35 +65,17 @@
                                 <!-- begin: card content -->
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        @livewire('dashboard.child.create-child', compact('governorates', 'cities'))
+                                        @include('dashboard.children.create.form')
                                     </div>
-                                    <!-- end: card content -->
                                 </div>
-                            </div> <!-- end: card  -->
-                        </div><!-- end: row  -->
-                    </div>
-                </section><!-- end: sections  -->
-            </div><!-- end: content body  -->
-        </div> <!-- end: content wrapper  -->
+                                <!-- end: card content -->
+                            </div>
+                        </div> <!-- end: card  -->
+                    </div><!-- end: row  -->
+            </div>
+            </section><!-- end: sections  -->
+        </div><!-- end: content body  -->
+    </div> <!-- end: content wrapper  -->
 
     </div><!-- end: content app  -->
 @endsection
-
-@push('style')
-    @if (Lang() == 'ar')
-        <link rel="stylesheet" href="{!! asset('assets/dashbaord/css-rtl/child-wizard.css') !!}" rel="stylesheet">
-    @else
-        <link rel="stylesheet" href="{!! asset('assets/dashbaord/css/child-wizard.css') !!}" rel="stylesheet">
-    @endif
-@endpush
-
-
-{{-- @push('scripts')
-    <script>
-        document.addEventListener('livewire:init', () => {
-            Livewire.on('showFullScreenModal', () => {
-                $('#fullScreenModal').modal('show');
-            });
-        });
-    </script>
-@endpush --}}

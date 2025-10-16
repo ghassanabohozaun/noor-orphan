@@ -15,11 +15,11 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'],
     ],
     function () {
-        ########################################### Auth  ##################################################################
+        ########################################### Auth  ##################################################################################
         Route::get('login', [AuthController::class, 'getLogin'])->name('get.login');
         Route::post('login', [AuthController::class, 'postLogin'])->name('post.login');
         Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-        ########################################### reset password  ######################################################################
+        ########################################### reset password  #########################################################################
         Route::group(['prefix' => 'password', 'as' => 'password.'], function () {
             Route::controller(ForgetPasswordController::class)->group(function () {
                 Route::get('email', 'showEmailForm')->name('get.email');
@@ -36,9 +36,9 @@ Route::group(
 
         ########################################### protected routes  #####################################################################
         Route::group(['middleware' => 'auth:admin'], function () {
-            ########################################### welcome  ##########################################################################
+            ########################################### welcome  ###########################################################################
             Route::get('/', [DashboardController::class, 'index'])->name('index');
-            ########################################### roles routes ######################################################################
+            ########################################### roles routes #######################################################################
             Route::group(['middleware' => 'can:roles'], function () {
                 Route::resource('roles', RolesController::class);
                 Route::post('/roles/destroy', [RolesController::class, 'destroy'])->name('roles.destroy');
@@ -51,7 +51,7 @@ Route::group(
                 Route::post('/admins/status', [AdminsController::class, 'changeStatus'])->name('admins.change.status');
             });
 
-            ########################################### world routes  ######################################################################
+            ########################################### world routes  #######################################################################
             Route::group(['middleware' => 'can:world'], function () {
                 // governorates routes
                 Route::resource('governorates', GovernoratiesController::class);
@@ -72,31 +72,31 @@ Route::group(
                 Route::put('/settings/{id?}', [SettingsController::class, 'update'])->name('settings.update');
             });
 
-            ########################################### products routes  ######################################################################
-
+            ########################################### children routes  ######################################################################
             Livewire::setUpdateRoute(function ($handle) {
                 return Route::post('/livewire/update', $handle);
             });
 
-            ########################################### children routes  ######################################################################
             Route::group(['middleware' => 'can:children'], function () {
                 Route::resource('children', ChildernController::class);
                 Route::get('/children-all', [ChildernController::class, 'getAll'])->name('children.get.all');
-                Route::post('/childrem/change-status', [ChildernController::class, 'changeStatus'])->name('children.change.status');
+                Route::post('/children/change-status', [ChildernController::class, 'changeStatus'])->name('children.change.status');
                 Route::get('download-pdf/{id?}', [ChildernController::class, 'downloadPDF'])->name('children.download.pdf');
+                Route::get('/children/get-cities/{id?}', [ChildernController::class, 'getCities'])->name('children.get.cities');
+                Route::post('/children/check-email-uniqueness', [ChildernController::class, 'checkEmailUniqueness'])->name('children.check.email.unique');
             });
 
-            ########################################### addresses routes  ######################################################################
+            ########################################### addresses routes  ##########################################################################
             Route::get('addresses', [DashboardController::class, 'addresses'])->name('addresses');
 
-            ########################################### sponsership statuses routes  ######################################################################
+            ########################################### sponsership statuses routes  ###############################################################
             Route::group(['middleware' => 'can:sponsershipStatuses'], function () {
                 Route::resource('sponsershipStatuses', SponsershipStatusesController::class);
                 Route::post('/sponsershipStatuses/destroy', [SponsershipStatusesController::class, 'destroy'])->name('sponsershipStatuses.destroy');
                 Route::post('/sponsershipStatuses/change-status', [SponsershipStatusesController::class, 'changestatus'])->name('sponsershipStatuses.change.status');
             });
 
-            ########################################### sponsership organizations routes  ######################################################################
+            ########################################### sponsership organizations routes  ############################################################
             Route::group(['middleware' => 'can:sponsershipOrganizations'], function () {
                 Route::resource('sponsershipOrganizations', SponsershipOrganizationsController::class);
                 Route::post('/sponsershipOrganizations/destroy', [sponsershipOrganizationsController::class, 'destroy'])->name('sponsershipOrganizations.destroy');

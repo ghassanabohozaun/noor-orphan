@@ -155,8 +155,9 @@ class ChildService
             }
 
             DB::commit();
-            return true;
+            return $child;
         } catch (\Exception $e) {
+            dd($e);
             DB::rollBack();
             Log::error('Error Creating Child  : ' . $e->getMessage(), ['trace' => $e->getTraceAsString()]);
             return false;
@@ -164,10 +165,13 @@ class ChildService
     }
 
     // update child
-    public function updateChild($ChildID, $myChild, $childData, $childFamilyData, $childFatherData, $childMotherData, $childGuaridanData, $childFileData)
+    public function updateChild($ChildID, $myChild,$childData, $childFamilyData, $childFatherData, $childMotherData, $childGuaridanData, $childFileData)
     {
         try {
             DB::beginTransaction();
+
+
+
 
             // child
             $child = $this->childRepository->updateChild($myChild, $childData);

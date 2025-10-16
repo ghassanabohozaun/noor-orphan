@@ -12,9 +12,8 @@
                     <div class="">
                         <div class="card  z-index-0 mt-2 col-xl-12 col-lg-12 col-sm-12 mt-6">
                             <div class="card-body">
-                                @livewire('dashboard.child.edit-child', compact('ChildID', 'child', 'governoates', 'cities'))
+                                @include('dashboard.children.edit.form')
                             </div>
-
                         </div>
                     </div>
                 </div>

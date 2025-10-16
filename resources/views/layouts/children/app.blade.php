@@ -19,7 +19,39 @@
 
     <link id="pagestyle" href="{!! asset('assets/children') !!}/assets/css/soft-ui-dashboard.css?v=1.0.3" rel="stylesheet" />
     <link id="pagestyle" href="{!! asset('assets/children') !!}/assets/css/my-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{!! asset('vendor/flasher/flasher.min.css') !!}" rel="stylesheet">
 
+    @if (Lang() == 'ar')
+        <style>
+            select {
+                appearance: none;
+                /* Hide default browser styling */
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: left 0.75rem center;
+                background-size: 1rem;
+                padding-left: 2rem;
+                /* Ensure space for the arrow */
+            }
+        </style>
+    @else
+        <style>
+            select {
+                appearance: none;
+                /* Hide default browser styling */
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='currentColor' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: right 0.75rem center;
+                background-size: 1rem;
+                padding-right: 2rem;
+                /* Ensure space for the arrow */
+            }
+        </style>
+    @endif
 
     @stack('style')
 </head>
@@ -134,35 +166,8 @@
     <!-- End main -->
 
     <!--   Core JS Files   -->
-    <script src="{!! asset('assets/children') !!}/assets/js/core/popper.min.js"></script>
-    <script src="{!! asset('assets/children') !!}/assets/js/core/bootstrap.min.js"></script>
-    <script src="{!! asset('assets/children') !!}/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="{!! asset('assets/children') !!}/assets/js/plugins/smooth-scrollbar.min.js"></script>
-
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-
-
-    <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-        }
-    </script>
-
-    <script src="{!! asset('assets/children') !!}/assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
-
-    @stack('script')
+    @include('layouts.dashboard.app-parts._scripts')
+    @stack('scripts')
 
 </body>
 

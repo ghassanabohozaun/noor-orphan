@@ -3,6 +3,50 @@
     {!! $title !!}
 @endsection
 
+@push('style')
+    <style>
+        .step {
+            /* border: 1px solid #ccc; */
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background-color: #f3f3f3;
+            height: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: #4CAF50;
+            width: 0%;
+            /* Initial width */
+            border-radius: 5px;
+        }
+
+        label.error {
+            color: #FF4961;
+            padding-top: 5px;
+            font-size: 0.9rem;
+
+        }
+
+        .text-danger {
+            color: #FF4961;
+            font-size: 0.9rem;
+            padding-top: 5px;
+        }
+
+        input.error,
+        input.invalid {
+            border-color: #FF4961;
+        }
+    </style>
+@endpush
+
 @section('content')
     <div class="app-content content">
 
@@ -65,7 +109,7 @@
                                 <!-- begin: card content -->
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        @livewire('dashboard.child.edit-child', compact('ChildID', 'child'))
+                                        @include('dashboard.children.edit.form')
                                     </div>
                                     <!-- end: card content -->
                                 </div>
@@ -78,21 +122,3 @@
 
     </div><!-- end: content app  -->
 @endsection
-
-@push('style')
-    @if (Lang() == 'ar')
-        <link rel="stylesheet" href="{!! asset('assets/dashbaord/css-rtl/child-wizard.css') !!}" rel="stylesheet">
-    @else
-        <link rel="stylesheet" href="{!! asset('assets/dashbaord/css/child-wizard.css') !!}" rel="stylesheet">
-    @endif
-@endpush
-
-{{-- @push('scripts')
-    <script>
-        document.addEventListener('livewire:init', () => {
-            Livewire.on('showFullScreenModal', () => {
-                $('#fullScreenModal').modal('show');
-            });
-        });
-    </script>
-@endpush --}}

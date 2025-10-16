@@ -27,6 +27,7 @@ return [
 
     'next' => 'Next',
     'previous' => 'Previous',
+    'step' => 'Step',
     'back' => 'Back',
     'fatherless' => 'Fatherless',
     'parentless' => 'Parentless',
@@ -213,4 +214,24 @@ return [
     'children_count' => 'Children Count',
     'governorates_count' => 'Governorates Count',
     'cities_count' => 'Cities Count',
+
+    // validation
+    'required' => 'This Field Required',
+    'digits' => 'Must be digits',
+    'date' => 'Must be date',
+    'max' => 'Max allow characters 100',
+    'min' => 'Min allow characters 2',
+    'in' => 'The entered value is not valid',
+    'image' => 'must be image ',
+    'image_max' => 'Max allow image size 1 mega',
+    'mimes' => 'image with png format only',
+    'photo_required' => 'Article Photo Required',
+    'unique' => 'Article Title must be unique',
+    'max_length_9' => 'Max allow characters 9',
+    'min_lenght_9' => 'Min allow characters 9',
+    'max_length_6' => 'Max allow characters 6',
+     'min_length_6' => 'Max allow characters 6',
+    'min_lenght_3' => 'Min allow characters 3',
+    'equal_to' => 'Password does not match',
+    'child_exists'=>'This Child is Exists',
 ];
